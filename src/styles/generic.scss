@@ -1,0 +1,12 @@
+@import './vars.sass';
+html,
+body {
+  margin: 0 auto;
+  font-family: $font;
+}
+.divider {
+  background-color: #d9d9d999;
+  min-height: 1px;
+  position: relative;
+  width: 100%;
+}

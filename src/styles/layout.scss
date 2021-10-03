@@ -1,0 +1,20 @@
+@import './vars.sass';
+.app {
+  display: flex;
+  & > .app-side-nav {
+    position: relative;
+    width: $side-nav-width;
+  }
+  & > .main-view {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: $content-bg;
+    & > .app-header {
+      height: $app-header-height;
+    }
+    & > .app-content {
+      flex-grow: 1;
+    }
+  }
+}
