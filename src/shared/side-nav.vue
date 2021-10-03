@@ -1,5 +1,6 @@
 <template>
-  <div class="app-side-nav">
+  <div id="app-side-nav" class="app-side-nav">
+    <div class="back-drop" @click="toggleNav" />
     <div class="nav-cont">
       <div class="logo"><img src="@/assets/logo.png" /></div>
       <div class="list">
@@ -9,6 +10,7 @@
           class="list-itm"
           :to="itm.url"
           active-class="active"
+          @click="toggleNav"
         >
           <div class="left-corder" />
           <i :class="itm.icon"></i>
@@ -29,6 +31,7 @@
 </template>
 
 <script>
+import { navigrationDrawer } from './../services/nav-drawer'
 export default {
   data() {
     return {
@@ -45,11 +48,17 @@ export default {
       ],
     }
   },
+  methods: {
+    toggleNav() {
+      navigrationDrawer.toggle()
+    },
+  },
 }
 </script>
 
 <style lang="scss">
 @import './../styles/vars.sass';
+@import './../styles/mixins.sass';
 $left-pad: 32px;
 $list-height: 100px;
 $list-corder-height: 25px;
@@ -102,6 +111,9 @@ $list-corder-height: 25px;
             left: 0;
             background-color: $primary;
             border-radius: 0px 0px 21px 0px;
+            @include only-mobile {
+              border-radius: 0px;
+            }
           }
           &::before {
             content: '';
@@ -112,6 +124,9 @@ $list-corder-height: 25px;
             left: 0;
             background-color: $primary;
             border-radius: 0px 21px 0px 0px;
+            @include only-mobile {
+              border-radius: 0px;
+            }
           }
           & > .left-corder {
             height: $list-height - $list-corder-height * 2;

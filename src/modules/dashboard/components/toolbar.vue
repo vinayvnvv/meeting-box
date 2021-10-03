@@ -23,11 +23,18 @@ export default {}
 
 <style lang="scss">
 @import './../../../styles/vars.sass';
+@import './../../../styles/mixins.sass';
 .dashboard-tool {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: 21px 0px 11px 0px;
+  @include only-mobile {
+    display: block;
+    & > div {
+      margin-bottom: 9px;
+    }
+  }
   & > div {
     select {
       background-color: $primary;

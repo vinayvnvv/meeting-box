@@ -1,4 +1,5 @@
 @import './vars.sass';
+@import './mixins.sass';
 html,
 body {
   margin: 0 auto;
@@ -9,4 +10,15 @@ body {
   min-height: 1px;
   position: relative;
   width: 100%;
+}
+.is-mobile {
+  display: none;
+  @include only-mobile {
+    display: block;
+  }
+}
+.only-desktop {
+  @include only-mobile {
+    display: none;
+  }
 }

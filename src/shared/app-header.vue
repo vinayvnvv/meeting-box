@@ -2,7 +2,9 @@
   <div class="app-header">
     <div class="inner">
       <div class="left">
-        <div class="form-control">
+        <button class="btn is-icon is-mobile" @click="toggleNav"><i class="ion-navicon" /></button
+        >&nbsp;
+        <div class="form-control only-desktop">
           <input placeholder="Search for anything" />
         </div>
       </div>
@@ -23,11 +25,19 @@
 </template>
 
 <script>
-export default {}
+import { navigrationDrawer } from './../services/nav-drawer'
+export default {
+  methods: {
+    toggleNav() {
+      navigrationDrawer.toggle()
+    },
+  },
+}
 </script>
 
 <style lang="scss">
 @import './../styles/vars.sass';
+@import './../styles/mixins.sass';
 .app {
   display: flex;
   & > .main-view {
@@ -40,8 +50,13 @@ export default {}
         align-items: center;
         justify-content: space-between;
         padding: 0px $layout-padding;
+        @include only-mobile {
+          padding: 0 $layout-padding-mobile;
+        }
         & > .left {
           flex-grow: 1;
+          display: flex;
+          align-items: center;
           & > .form-control {
             height: 43;
             width: 70%;

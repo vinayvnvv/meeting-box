@@ -1,4 +1,5 @@
 @import './vars.sass';
+@import './mixins.sass';
 .app {
   display: flex;
   & > .app-side-nav {
@@ -15,6 +16,45 @@
     }
     & > .app-content {
       flex-grow: 1;
+    }
+  }
+  //   handle mobile devices
+  @include only-mobile {
+    & > .app-side-nav {
+      position: fixed;
+      z-index: 333;
+      top: 0;
+      left: 0;
+      transform: translateX(-$side-nav-width);
+      transition: 0.3s all ease-in-out;
+
+      & > .back-drop {
+        position: fixed;
+        transition: 0.2s all;
+        display: none;
+        z-index: 332;
+        top: 0;
+        left: 0;
+        width: 200vw;
+        height: 100%;
+        background-color: #ffffff66;
+      }
+      & > .nav-cont {
+        z-index: 444;
+        position: relative;
+        background-color: $primary;
+      }
+    }
+    & > .main-view {
+      height: 100vh;
+    }
+  }
+  &.active-sidebar {
+    & > .app-side-nav {
+      transform: translateX(0px);
+      & > .back-drop {
+        display: block;
+      }
     }
   }
 }

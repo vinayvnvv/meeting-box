@@ -1,7 +1,7 @@
 
 @mixin only-mobile
-    @media (max-width: 599px)
+    @media (max-width: 960px)
         @content
-@mixin below-max-width
-    @media (max-width: $max-width - 1)
+@mixin only-desktop
+    @media (min-width: 961px)
         @content
