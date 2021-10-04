@@ -1,7 +1,7 @@
 <template>
   <div class="messages-viewer">
     <div v-if="selected && selected.type === 'chat'">
-      <button type="button" class="close btn is-icon" @click="onBack">
+      <button type="button" class="close btn is-icon is-mobile-imp" @click="onBack">
         <i class="ion-close-round" />
       </button>
       <div class="toolbar">
