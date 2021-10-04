@@ -43,7 +43,7 @@
     <div v-if="selected && selected.type === 'comment'" class="noti">
       This is the view for notification type selected by the user<br /><br />
       Click on any chat type to see the view for Chats<br /><br />
-      <button class="btn is-secondary" @click="onBack">Back</button>
+      <button class="btn is-secondary is-mobile-imp" @click="onBack">Back</button>
     </div>
   </div>
 </template>

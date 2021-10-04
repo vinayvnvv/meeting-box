@@ -16,8 +16,33 @@ const routes = [
   },
   {
     path: '/my-tasks',
-    name: 'About',
-    component: () => import('../modules/tasks'),
+    name: 'My Tasks',
+    component: () => import('../modules/other-screens'),
+  },
+  {
+    path: '/my-projects',
+    name: 'My Projects',
+    component: () => import('../modules/other-screens'),
+  },
+  {
+    path: '/people',
+    name: 'People',
+    component: () => import('../modules/other-screens'),
+  },
+  {
+    path: '/statistics',
+    name: 'Statistics',
+    component: () => import('../modules/other-screens'),
+  },
+  {
+    path: '/help',
+    name: 'Help',
+    component: () => import('../modules/other-screens'),
+  },
+  {
+    path: '/settings',
+    name: 'Settings',
+    component: () => import('../modules/other-screens'),
   },
 ]
 

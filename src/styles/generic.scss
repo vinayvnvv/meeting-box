@@ -17,6 +17,12 @@ body {
     display: block;
   }
 }
+.is-mobile-imp {
+  display: none !important;
+  @include only-mobile {
+    display: block !important;
+  }
+}
 .only-desktop {
   @include only-mobile {
     display: none;
